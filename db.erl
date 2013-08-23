@@ -5,23 +5,23 @@
 		 delete/2,
 	 	read/2,
 		 match/2]).
-% new
-new () -> [].
-%new (_) -> {error, badarg}.
 
-%destroy
+new () -> [].
+
+
+
 destroy (Db) when is_list(Db)-> 
 	ok; %Garbage collector will handle this (they said)
 
 destroy (_) -> {error, badarg}.
 
-%write
+
 write ( Key , Element , Dbase) when is_atom(Key) , is_atom(Element) , is_list(Dbase) ->
 	[{Key, Element}| Dbase];
 
 write(_, _, _) -> {error,badarg}.
 
-%read
+
 read( Key, [] ) when is_atom(Key) ->
 	give_res(fail,[]);
 
@@ -46,7 +46,7 @@ give_res( Mark, Hbase ) ->
 		_ -> {error, instance}
 	end.
 
-%match
+
 match(Element, Dbase) when is_atom(Element), is_list(Dbase) ->
 	match_aux([], Element, Dbase);
 
@@ -63,7 +63,7 @@ match_aux(Acc, Element , Dbase) ->
 		_-> match_aux(Acc, Element, Tbase)
 	end.
 
-%delete
+
 delete(Key, []) when is_atom(Key) ->
 	[];
 

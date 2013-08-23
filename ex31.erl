@@ -1,6 +1,6 @@
 -module(ex31).
 -export([sum/1,
-	 sum/2]).
+        sum/2]).
 sum ( N ) when is_integer( N ), N >= 0  -> 
 	sum_aux(N);
 sum ( _ ) -> {error , badarg}.

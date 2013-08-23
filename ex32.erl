@@ -1,6 +1,6 @@
 -module(ex32).
 -export([create/1,
-	 reverse_create/1]).
+	    reverse_create/1]).
 
 create( N ) when is_integer(N), N >=0 ->
 	create_aux( N , 1 );

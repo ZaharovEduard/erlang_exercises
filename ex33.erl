@@ -1,7 +1,6 @@
 -module(ex33).
 -export([print_integers/1,
-	 print_even_integers/1
-]).
+	    print_even_integers/1]).
 
 print_integers( N ) when is_integer(N), N >= 1 ->
 	io:format("Number: ~p~n",[N]),
